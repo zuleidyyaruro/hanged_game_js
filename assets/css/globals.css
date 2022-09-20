@@ -1,0 +1,162 @@
+
+/*  Variables */
+
+:root {
+
+    --clr-background-1:#5C258D;
+    --clr-background-2:#4389A2;
+
+    /* dark shades of primary color*/
+ --clr-primary-1: hsl(205, 86%, 17%);
+ --clr-primary-2: hsl(205, 77%, 27%);
+ --clr-primary-3: hsl(205, 72%, 37%);
+ --clr-primary-4: hsl(205, 63%, 48%);
+
+ /* primary/main color */
+ --clr-primary-5: hsl(205, 78%, 60%);
+
+ /* lighter shades of primary color */
+ --clr-primary-6: hsl(205, 89%, 70%);
+ --clr-primary-7: hsl(205, 90%, 76%);
+ --clr-primary-8: hsl(205, 86%, 81%);
+ --clr-primary-9: hsl(205, 90%, 88%);
+ --clr-primary-10: hsl(205, 100%, 96%);
+
+ /* darkest grey - used for headings */
+ --clr-grey-1: hsl(209, 61%, 16%);
+ --clr-grey-2: hsl(211, 39%, 23%);
+ --clr-grey-3: hsl(209, 34%, 30%);
+ --clr-grey-4: hsl(209, 28%, 39%);
+
+ /* grey used for paragraphs */
+ --clr-grey-5: hsl(210, 22%, 49%);
+ --clr-grey-6: hsl(209, 23%, 60%);
+ --clr-grey-7: hsl(211, 27%, 70%);
+ --clr-grey-8: hsl(210, 31%, 80%);
+ --clr-grey-9: hsl(212, 33%, 89%);
+ --clr-grey-10: hsl(210, 36%, 96%);
+
+ --clr-white: #fff;
+
+ --clr-red-dark: hsl(360, 67%, 44%);
+ --clr-red-light: hsl(360, 71%, 66%);
+ --clr-green-dark: hsl(125, 67%, 44%);
+ --clr-green-light: hsl(125, 71%, 66%);
+
+ --clr-black: #222;
+ --transition: all 0.3s linear;
+ --spacing: 0.1rem;
+ --radius: 0.25rem;
+ --light-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+ --dark-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+ --max-width: 1170px;
+ --fixed-width: 620px;
+}
+
+/* Box Model */
+/* apply a natural box layout model to all elements, but allowing components to change */
+html {
+    box-sizing: border-box;
+}
+
+*, *:before, *:after {
+    box-sizing: inherit;
+}
+
+/*  grid responsive  */
+
+.container {
+    width: 90%;
+    margin: auto;
+}
+
+.row{
+    display: flex;  
+    width: 100%;
+    text-align: center;  
+    flex-wrap: wrap; 
+    /* wrap permite que los elementos que no quepan se muevan a otra fila */
+    padding: 3px;
+}
+
+.card {
+    border: 8px solid white;
+    background-color: blue;
+    color: aliceblue;
+    padding: 10px;
+    border-radius: 20px;
+}
+
+@media only screen and (min-width: 600px) {
+    /* For tablets: */
+    .col-s-1 {width: 8.33%;}
+    .col-s-2 {width: 16.66%;}
+    .col-s-3 {width: 25%;}
+    .col-s-4 {width: 33.33%;}
+    .col-s-5 {width: 41.66%;}
+    .col-s-6 {width: 50%;}
+    .col-s-7 {width: 58.33%;}
+    .col-s-8 {width: 66.66%;}
+    .col-s-9 {width: 75%;}
+    .col-s-10 {width: 83.33%;}
+    .col-s-11 {width: 91.66%;}
+    .col-s-12 {width: 100%;}
+}
+  
+@media only screen and (min-width: 768px) {
+    /* For desktop: */
+    .col-md-1 {width: 8.33%;}
+    .col-md-2 {width: 16.66%;}
+    .col-md-3 {width: 25%;}
+    .col-md-4 {width: 33.33%;}
+    .col-md-5 {width: 41.66%;}
+    .col-md-6 {width: 50%;}
+    .col-md-7 {width: 58.33%;}
+    .col-md-8 {width: 66.66%;}
+    .col-md-9 {width: 75%;}
+    .col-md-10 {width: 83.33%;}
+    .col-md-11 {width: 91.66%;}
+    .col-md-12 {width: 100%;}
+}
+
+@media only screen and (min-width: 992px) {
+    .col-lg-1 {width: 8.33%;}
+    .col-lg-2 {width: 16.66%;}
+    .col-lg-3 {width: 25%;}
+    .col-lg-4 {width: 33.33%;}
+    .col-lg-5 {width: 41.66%;}
+    .col-lg-6 {width: 50%;}
+    .col-lg-7 {width: 58.33%;}
+    .col-lg-8 {width: 66.66%;}
+    .col-lg-9 {width: 75%;}
+    .col-lg-10 {width: 83.33%;}
+    .col-lg-11 {width: 91.66%;}
+    .col-lg-12 {width: 100%;}
+}
+
+.border {
+    border: 1px solid black;
+}
+
+body {
+    background: var(--clr-background-1);  /* fallback for old browsers */
+    background: -webkit-linear-gradient(to right,  var(--clr-background-1),  var(--clr-background-2));  /* Chrome 10-25, Safari 5.1-6 */
+    background: linear-gradient(to right,  var(--clr-background-1),  var(--clr-background-2)); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+    font-family: 'Nunito Sans', sans-serif;
+    height: 100vh;
+}
+
+header img {
+    width: 180px;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+h1 {
+    text-transform: capitalize;
+}
