@@ -7,9 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Hanged</title>
 
+
     <link rel="stylesheet" href="./assets/css/normalize.css">
-    <link rel="stylesheet" href="./assets/css/globals.css">
-    <link rel="stylesheet" href="./assets/css/index.css">
+    <link rel="stylesheet" href="./assets/css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;1,400&display=swap"
@@ -28,15 +28,22 @@
 
     </header>
 
-    <main>
+    <main class="main border">
 
-        <a class="btn" href="./new-game.html">start Game</a>
-        <a class="btn" href="./new-word.html">add new word</a>
+
+        <button class="btn" id="btn-start-game" onclick="showHanged()">start Game</button>
+        <button class="btn" id="btn-add-word" onclick="addNewWord()">add new word</button>
+
+
 
     </main>
 
+    <div>
+
+    </div>
 
     <script src="./assets/js/app.js"></script>
+    <script src="./assets/js/sweet-alert.js"></script>
 </body>
 
 </html>
