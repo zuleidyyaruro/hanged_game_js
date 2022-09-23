@@ -3,7 +3,7 @@ let numRandom;
 let letter;
 let chosenWord;
 let index;
-const arrayWords = ["SABANA"];
+const arrayWords = ["ABA"];
 
 const main = document.querySelector("main");
 const btnStartgame = document.querySelector("#btn-start-game");
@@ -90,7 +90,6 @@ window.onkeypress = function (event) {
 
     letter = (event.key).toUpperCase();
     const containerLines = document.querySelector("#container-lines");
-    const linesAll = document.querySelectorAll(".line");
 
     if (/[^A-ZÑ]/.test(letter)) {
         return
@@ -101,31 +100,32 @@ window.onkeypress = function (event) {
         if (chosenWord[i] === letter) {
 
             let indexWordRepeat = i;
+
             index = chosenWord.findIndex(item => item === letter);
 
             if (indexWordRepeat !== index) {
                 index = chosenWord.findIndex(item => item === letter);
             }
 
+            // debugger;
+
             const newItem = document.createElement("span");
             newItem.innerText = letter;
 
             let line = document.querySelector(`.line-${indexWordRepeat}`);
-            containerLines.insertBefore(newItem, line);
-            containerLines.removeChild(line);
+
+            if (containerLines.children[i].textContent !== letter) {
+                containerLines.insertBefore(newItem, line);
+                containerLines.removeChild(line);
+            } else {
+                // continuar aquí
+            }
+
+            // }
 
         }
     }
 
-    // if (index !== -1) {
-
-    //     containerLines.removeChild(linesAll[index]);
-    //     const span = document.createElement('span');
-    //     span.innerText = letter
-    //     containerLines.appendChild(span)
-    //     console.log(containerLines)
-
-    // }
 }
 
 
