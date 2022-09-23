@@ -4,7 +4,7 @@
 :root {
 
     --clr-background-1:#b761da;
-    --clr-background-2:#4389A2;
+    --clr-background-2:#439ca2;
 
     /* dark shades of primary color*/
  --clr-primary-1: hsl(205, 86%, 17%);
@@ -198,4 +198,30 @@ h1 {
 
 .horca {
     width: 300px;
+}
+
+span {
+    font-size: 4rem;
+    color: var( --clr-primary-10);
+}
+
+.swal2-confirm {
+    background-color: var(--clr-background-1);
+    border-radius: 3px;
+    border: none;
+    padding: 15px;
+    color: var(--clr-white);
+    margin: 5px;
+}
+
+.swal2-cancel {
+    background-color: var(--clr-background-2);
+    border-radius: 3px;
+    border: none;
+    padding: 15px;
+    color: var(--clr-white)
+}
+
+.swal2-confirm, .swal2-cancel:hover {
+    cursor: pointer;
 }
