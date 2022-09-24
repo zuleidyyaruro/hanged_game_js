@@ -61,7 +61,7 @@ const showHanged = () => {
     main.classList.remove("main");
     main.classList.add("main-another");
     main.innerHTML = `
-            <div>
+            <div id='container-hanged'>
                 <img class='horca' src="./assets/img/horca.png" alt="line">
             </div>
             <div id='container-lines' >
@@ -83,6 +83,8 @@ const showHanged = () => {
 
 
 window.onkeypress = function (event) {
+
+    const hanged = document.querySelector('#container-hanged');
 
     // función que se ejecuta cada vez que se presiona una tecla
     letter = (event.key).toUpperCase();
@@ -147,8 +149,18 @@ window.onkeypress = function (event) {
     } else {
 
         countWrongLetters += 1;
+
         let wrongLetter = document.querySelector('#wrong-letter');
-        if (countWrongLetters > 4) {
+
+        wrongLetter.innerHTML += `
+                    <span> ${letter}</span >
+        `;
+
+        hanged.innerHTML = `
+            <img id='horca' class='horca' src="./assets/img/horca_${countWrongLetters}.png" alt="line">      
+        `;
+
+        if (countWrongLetters > 5) {
             swal.fire({
                 title: "You loose!",
                 text: `The correct word is ${chosenWord.join('')} `,
@@ -167,9 +179,6 @@ window.onkeypress = function (event) {
                     }
                 });
         }
-        wrongLetter.innerHTML += `
-                    <span> ${letter}</span >
-            `;
     }
 }
 
