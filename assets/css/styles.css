@@ -200,8 +200,8 @@ h1 {
     width: 300px;
 }
 
-span {
-    font-size: 4rem;
+span{
+    font-size: 3rem;
     color: var( --clr-primary-10);
 }
 
@@ -224,4 +224,9 @@ span {
 
 .swal2-confirm, .swal2-cancel:hover {
     cursor: pointer;
+}
+
+.wrong-letter span {
+    color: wheat;
+
 }
