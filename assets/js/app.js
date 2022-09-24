@@ -4,7 +4,7 @@ let chosenWord;
 let index;
 let countWrongLetters = 0;
 let countCorrectLetters = 0;
-const arrayWords = ["ABA"];
+const arrayWords = ["CASA"];
 
 const main = document.querySelector("main");
 const btnStartgame = document.querySelector("#btn-start-game");
@@ -39,6 +39,7 @@ const saveNewWord = () => {
 
 const cancelNewWord = () => {
     //  cancelar al ingresar una nueva palabra  
+
     main.innerHTML = `
         <button class="btn" id="btn-start-game" onclick="showHanged()">start Game</button>
         <button class="btn" id="btn-add-word" onclick="addNewWord()">add new word</button>
@@ -54,9 +55,9 @@ const chooseSecretWord = () => {
 const showHanged = () => {
 
     //  función que muestra el juego desde cero
-    chosenWord = chooseSecretWord();
     countWrongLetters = 0;
     countCorrectLetters = 0;
+    chosenWord = chooseSecretWord();
     main.classList.remove("main");
     main.classList.add("main-another");
     main.innerHTML = `
@@ -66,6 +67,10 @@ const showHanged = () => {
             <div id='container-lines' >
             </div>
             <div id='wrong-letter'>
+            </div>
+            <div>
+                <button class="btn" id="btn-start-game" onclick="showHanged()">new Game</button>
+                <a class='btn' href='../index.html'>Desistir</a>
             </div>
     `;
     const containerLines = document.querySelector("#container-lines");
@@ -113,7 +118,6 @@ window.onkeypress = function (event) {
         const ar = [...containerLines.children];
 
         for (let i = 0; i < ar.length; i++) {
-
             if (ar[i].textContent === letter) {
                 countCorrectLetters += 1;
             }
@@ -131,9 +135,10 @@ window.onkeypress = function (event) {
             })
                 .then(resultado => {
                     if (resultado.value) {
+                        // juego nuevo
                         showHanged();
                     } else {
-                        // Dijeron que no
+                        // menú princip<l
                         window.location.href = './index.html'
                     }
                 });
